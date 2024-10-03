@@ -10,8 +10,8 @@
   "bin": "code.exe",
   "hash": "ADD_YOUR_HASH_HERE",
   "depends": [
-    "python",   // Python from the 'main' bucket
-    "git"       // Git from the 'main' bucket
+    "python",   
+    "git"       
   ],
   "installer": {
     "script": [

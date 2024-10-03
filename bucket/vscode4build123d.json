@@ -1,0 +1,32 @@
+{
+  "version": "2024.0.1",
+  "description": "build123d Python CAD software with necessary tools.",
+  "homepage": "https://code.visualstudio.com/Docs",
+  "license": {
+        "identifier": "Microsoft Visual Stuido Code",
+        "url": "https://code.visualstudio.com/license/"
+    },
+  "url": "https://github.com/winpython/winpython/releases/download/8.2.20240618final/Winpython64-3.12.4.1dot.exe",
+  "hash": "0b2bd40fec6c15eb61f113262d9d2dc0a957282dfcb89a017140e06ad932e1d2",
+  "architecture": "64bit",
+  "depends": [
+    "python",   
+    "git"       
+  ],
+  "bin": "code.exe",
+  "shortcuts": [["code.exe", "Code for build123d"]], 
+  "installer": {
+    "script": [
+      "Invoke-WebRequest -Uri \"https://github.com/winpython/winpython/releases/download/8.2.20240618final/Winpython64-3.12.4.1dot.exe\" -OutFile \"$dir\\1_winpython.exe\"",
+      "Invoke-WebRequest -Uri \"https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-archive\" -OutFile \"$dir\\2_visual-studio-code.exe\"",
+      "Invoke-WebRequest -Uri \"https://github.com/git-for-windows/git/releases/download/v2.46.1.windows.1/PortableGit-2.46.1-64-bit.7z.exe\" -OutFile \"$dir\\3_portable-git.exe\"",
+      "Invoke-WebRequest -Uri \"https://www.fossil-scm.org/home/uv/fossil-w64-2.24.zip\" -OutFile \"$dir\\4_fossil-scm.exe\"",
+      "Write-Host \"Download completed.\""
+    ]
+  },
+  "uninstaller": {
+    "script": [
+        "Remove-Item \"$dir\" -Recurse -Force"
+    ]
+  }
+}
